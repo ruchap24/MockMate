@@ -1,6 +1,6 @@
 import React from 'react'
 import AddNewInterview from './_components/AddNewInterview'
-// import InterviewList from './_components/InterviewList'
+import InterviewList from './_components/InterviewList'
 
 export default function Dashboard() {
   return (
@@ -14,7 +14,7 @@ export default function Dashboard() {
 
       {/* Previous Interview List */}
 
-      {/* <InterviewList/> */}
+      <InterviewList/>
 
     </div>
   )
