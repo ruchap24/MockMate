@@ -9,6 +9,7 @@ import {
 import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+import { eq } from 'drizzle-orm'
 
 export default function FeedBack({params}) {
 

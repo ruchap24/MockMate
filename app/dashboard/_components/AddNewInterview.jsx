@@ -10,7 +10,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-// import { chatSession } from '@/utils/gemini'
+import { chatSession } from '@/utils/gemini'
 import { LoaderCircle } from 'lucide-react'
 import { v4 as uuidv4 } from 'uuid';
 import { useUser } from '@clerk/nextjs'
@@ -30,7 +30,7 @@ export default function AddNewInterview() {
         createdBy : ""
     })
     const [loading, setLoading] = useState(false)
-    // const [jsonResponse, setJsonResponse] = useState([])
+    //const [jsonResponse, setJsonResponse] = useState([])
     const {user} = useUser()
     const router = useRouter();
     const onSubmit = async()=>{
