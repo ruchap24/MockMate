@@ -12,8 +12,6 @@ export default function Dashboard() {
         <AddNewInterview/>
       </div>
 
-      {/* Previous Interview List */}
-
       <InterviewList/>
 
     </div>
