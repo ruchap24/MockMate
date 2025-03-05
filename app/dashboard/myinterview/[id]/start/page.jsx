@@ -21,15 +21,15 @@ export default function StartInterview({params}) {
       },[id])
     
       const getInterviewDetails = async()=>{
-        const myId = params.id
-        const result = await axios.post(`/api/subinterview/${myId}`)
-        // console.log(result.data.myInterview.jsonResponse.replace('```',''));
-        
-        setInterviewData(result.data.myInterview)
+        try {
+          const result = await axios.post(`/api/subinterview/${id}`);
+          setInterviewData(result.data.myInterview);
 
-        const jsonResponseData = JSON.parse(result.data.myInterview.jsonResponse)
-        // console.log(jsonResponseData);
-        setMockInterviewQuestions(jsonResponseData)
+          const jsonResponseData = JSON.parse(result.data.myInterview.jsonResponse);
+          setMockInterviewQuestions(jsonResponseData);
+      } catch (error) {
+          console.error("Error fetching interview details:", error);
+      }
     }
 
   return (
