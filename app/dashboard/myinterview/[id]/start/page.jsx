@@ -16,7 +16,7 @@ export default function StartInterview({params}) {
     const [activeQuestionIndex, setActiveQuestionIndex] = useState(0)
 
     useEffect(()=>{
-        console.log(params.id);
+        // console.log(params.id);
         getInterviewDetails()
       },[id])
     
@@ -56,7 +56,7 @@ export default function StartInterview({params}) {
           <Button className='font-bold' onClick={()=>setActiveQuestionIndex(activeQuestionIndex+1)}>Next Question</Button>
         }
 
-        <Link href={`/dashboard/myinterview/${params.id}/myfeedback`}>
+        <Link href={`/dashboard/myinterview/${id}/myfeedback`}>
         {activeQuestionIndex == mockInterviewQuestions?.length-1 && <Button className='font-bold'>End Interview</Button>}
         </Link>
         

@@ -97,7 +97,7 @@ export default function RecordAnswerSection({mockInterviewQuestions,activeQuesti
   return (
     <div className='flex items-center justify-center flex-col'>
         <div className='flex flex-col justify-center items-center bg-black rounded-lg p-5 mt-20'>
-            <Image src={'/webcam.png'} width={200} height={200} className='absolute' />
+            <Image src={'/webcam.png'} width={200} height={200} className='absolute' alt='img'/>
         <Webcam
         mirrored={true}
         style={{
