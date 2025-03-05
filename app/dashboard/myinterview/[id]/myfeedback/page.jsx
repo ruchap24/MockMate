@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import react, { useEffect, useState, use } from 'react'
 import axios from 'axios'
 import {
   Collapsible,
@@ -10,18 +10,18 @@ import { ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
 
-export default function FeedBack({params}) {
+export default function FeedBack({id}) {
 
   useEffect(() => {
-    GetFeedBack()
-    console.log(params.id);
-  }, [])
+    react.use(GetFeedBack())
+    console.log(id);
+  }, [id])
 
   const router = useRouter();
   
   const [feedbackList, setFeedbackList] = useState([])
 
-  const mockidRef = params.id;
+  const mockidRef = id;
   const GetFeedBack = async()=>{
     const response = await axios.post("/api/subinterview/myfeedback",{mockidRef});
 
@@ -65,4 +65,3 @@ export default function FeedBack({params}) {
     </div>
   )
 }
-
