@@ -58,7 +58,7 @@ export default function FeedBack({id}) {
         </Collapsible>
       ))}
 
-      <div className='text-center m-10'>
+      <div className='text-center m-10 relative z-10'>
         <Button className='font-bold' onClick={()=>router.replace('/dashboard')}>Go Home</Button>
       </div>
 
