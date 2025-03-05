@@ -10,7 +10,7 @@ export default function StartInterview({params}) {
 
   const resolvedParams = React.use(params);
     const id = resolvedParams.id;
-    
+
     const [interviewData, setInterviewData] = useState("")
     const [mockInterviewQuestions, setMockInterviewQuestions] = useState("")
     const [activeQuestionIndex, setActiveQuestionIndex] = useState(0)
@@ -18,7 +18,7 @@ export default function StartInterview({params}) {
     useEffect(()=>{
         console.log(params.id);
         getInterviewDetails()
-      },[])
+      },[id])
     
       const getInterviewDetails = async()=>{
         const myId = params.id
