@@ -61,7 +61,7 @@ export default function FeedBack({id}) {
       <div className='text-center m-10 relative z-10'>
         <Button className='font-bold' onClick={() => {
         console.log("Navigating to dashboard");
-       router.replace('/dashboard');
+       router.push('/dashboard');
   }}>Go Home</Button>
       </div>
 
