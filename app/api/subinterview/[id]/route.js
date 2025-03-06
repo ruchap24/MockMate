@@ -1,33 +1,32 @@
 import { connectDB } from "@/app/dbConfig/dbConfig";
 import Interview from "@/app/models/InterviewModel";
+import { NextResponse } from "next/server";
 
-// Now I am connect with Database..
-connectDB()
+// Connect to the Database
+connectDB();
 
-// Post Request method
+export async function POST(request) {
+  try {
+    const myurl = request.url.split('/');
+    const myId = myurl[myurl.length - 1];
+    console.log(myId);
 
-export async function POST(request){
-    try {
-        const myurl = request.url.split('/')
-        const myId = myurl[myurl.length-1]
+    const myInterview = await Interview.findOne({ mockid: myId });
 
-        console.log(myId);
-        
-        const myInterview = await Interview.findOne({mockid: myId})
-
-        if(myInterview){
-            return Response.json({
-                message : "Successfull Found InterView!!",
-                success : true,
-                myInterview: myInterview
-            })
-        }
-        else{
-            return Response.json({error : "InterView Not Exist!!"},{status: 400});
-        }
-
-    } catch (error) {
-        console.log("Error Ageya Bro");
-        return Response.json({error : error},{status:500})
+    if (myInterview) {
+      return NextResponse.json({
+        message: "Successfully found Interview!!",
+        success: true,
+        myInterview: myInterview,
+      });
+    } else {
+      return NextResponse.json(
+        { error: "Interview Not Exist!!" },
+        { status: 400 }
+      );
     }
+  } catch (error) {
+    console.error("Error occurred:", error);
+    return NextResponse.json({ error: error.message || error }, { status: 500 });
+  }
 }
