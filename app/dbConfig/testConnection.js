@@ -12,7 +12,6 @@ const projectRoot = resolve(__dirname, '../../');
 const envPath = resolve(projectRoot, '.env.local');
 console.log('💡 Looking for .env.local at:', envPath);
 
-// Load environment variables
 dotenv.config({ path: envPath });
 
 async function testConnection() {
